@@ -1,0 +1,133 @@
+<!-- Top Bar -->
+<div class="top-bar">
+    <div class="container">
+        <div class="top-bar-content">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                {% if store.phone %}
+                    <span class="contact-item">
+                        <i class="icon-phone"></i>
+                        <a href="tel:{{ store.phone }}">{{ store.phone }}</a>
+                    </span>
+                {% endif %}
+                {% if store.email %}
+                    <span class="contact-item">
+                        <i class="icon-email"></i>
+                        <a href="mailto:{{ store.email }}">{{ store.email }}</a>
+                    </span>
+                {% endif %}
+            </div>
+
+            <!-- Top Actions -->
+            <div class="top-actions">
+                <!-- Language Switcher -->
+                {% if store.languages|length > 1 %}
+                    <salla-localization-modal type="language"></salla-localization-modal>
+                {% endif %}
+
+                <!-- Currency Switcher -->
+                {% if store.currencies|length > 1 %}
+                    <salla-localization-modal type="currency"></salla-localization-modal>
+                {% endif %}
+
+                <!-- User Account -->
+                <div class="user-account">
+                    {% if user.is_authenticated %}
+                        <div class="user-menu">
+                            <button class="user-toggle">
+                                <i class="icon-user"></i>
+                                <span>{{ user.name }}</span>
+                                <i class="icon-arrow-down"></i>
+                            </button>
+                            <div class="user-dropdown">
+                                <a href="{{ url('customer.profile') }}">حسابي</a>
+                                <a href="{{ url('customer.orders') }}">طلباتي</a>
+                                <a href="{{ url('customer.wishlist') }}">المفضلة</a>
+                                <a href="{{ url('auth.logout') }}">تسجيل الخروج</a>
+                            </div>
+                        </div>
+                    {% else %}
+                        <a href="{{ url('auth.login') }}" class="login-link">
+                            <i class="icon-user"></i>
+                            <span>تسجيل الدخول</span>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main Header -->
+<div class="main-header-content">
+    <div class="container">
+        <div class="header-row">
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Logo -->
+            <div class="logo">
+                <a href="{{ url('home') }}">
+                    {% if store.logo %}
+                        <img src="{{ store.logo }}" alt="{{ store.name }}" class="logo-img">
+                    {% else %}
+                        <h1 class="logo-text">{{ store.name }}</h1>
+                    {% endif %}
+                </a>
+            </div>
+
+            <!-- Search Bar -->
+            {% if theme.settings.show_search_bar %}
+                <div class="search-bar">
+                    <salla-search placeholder="ابحث عن المنتجات..." expand="desktop"></salla-search>
+                </div>
+            {% endif %}
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <!-- Search Toggle for Mobile -->
+                <button class="search-toggle" id="search-toggle">
+                    <i class="icon-search"></i>
+                </button>
+
+                <!-- Wishlist -->
+                <a href="{{ url('customer.wishlist') }}" class="action-link wishlist-link">
+                    <i class="icon-heart"></i>
+                    <span class="action-label">المفضلة</span>
+                    <salla-count class="action-count" type="wishlist"></salla-count>
+                </a>
+
+                <!-- Compare -->
+                <a href="{{ url('compare') }}" class="action-link compare-link">
+                    <i class="icon-compare"></i>
+                    <span class="action-label">المقارنة</span>
+                    <salla-count class="action-count" type="compare"></salla-count>
+                </a>
+
+                <!-- Cart -->
+                <button class="action-link cart-toggle" id="cart-toggle">
+                    <i class="icon-cart"></i>
+                    <span class="action-label">السلة</span>
+                    <salla-count class="action-count" type="cart"></salla-count>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Announcement Bar -->
+{% if store.announcement %}
+    <div class="announcement-bar">
+        <div class="container">
+            <div class="announcement-content">
+                <i class="icon-megaphone"></i>
+                <span>{{ store.announcement }}</span>
+                <button class="announcement-close">&times;</button>
+            </div>
+        </div>
+    </div>
+{% endif %}

@@ -1,0 +1,301 @@
+<!-- Desktop Navigation -->
+<div class="desktop-navigation">
+    <div class="container">
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="{{ url('home') }}" class="nav-link">الرئيسية</a>
+            </li>
+            
+            {% for category in store.categories|slice(0, 6) %}
+                <li class="nav-item {% if category.children %}has-dropdown{% endif %}">
+                    <a href="{{ category.url }}" class="nav-link">
+                        {{ category.name }}
+                        {% if category.children %}
+                            <i class="icon-arrow-down"></i>
+                        {% endif %}
+                    </a>
+                    
+                    {% if category.children %}
+                        <div class="dropdown-menu">
+                            <div class="dropdown-content">
+                                <div class="dropdown-categories">
+                                    {% for subcategory in category.children %}
+                                        <div class="dropdown-category">
+                                            <a href="{{ subcategory.url }}" class="category-title">
+                                                {{ subcategory.name }}
+                                            </a>
+                                            {% if subcategory.children %}
+                                                <ul class="subcategory-list">
+                                                    {% for subsubcategory in subcategory.children|slice(0, 5) %}
+                                                        <li>
+                                                            <a href="{{ subsubcategory.url }}">{{ subsubcategory.name }}</a>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            {% endif %}
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                                
+                                {% if category.featured_products %}
+                                    <div class="dropdown-featured">
+                                        <h4>منتجات مميزة</h4>
+                                        <div class="featured-products-grid">
+                                            {% for product in category.featured_products|slice(0, 3) %}
+                                                <div class="featured-product-card">
+                                                    <a href="{{ product.url }}">
+                                                        <img src="{{ product.image }}" alt="{{ product.name }}">
+                                                        <div class="product-info">
+                                                            <h5>{{ product.name }}</h5>
+                                                            <span class="price">{{ product.price }} ريال</span>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endif %}
+                </li>
+            {% endfor %}
+            
+            <li class="nav-item">
+                <a href="{{ url('offers') }}" class="nav-link special-link">العروض</a>
+            </li>
+            
+            <li class="nav-item">
+                <a href="{{ url('brands') }}" class="nav-link">الماركات</a>
+            </li>
+            
+            <li class="nav-item">
+                <a href="{{ url('about') }}" class="nav-link">من نحن</a>
+            </li>
+            
+            <li class="nav-item">
+                <a href="{{ url('contact') }}" class="nav-link">اتصل بنا</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Mobile Navigation -->
+<div class="mobile-navigation mobile-menu">
+    <div class="mobile-menu-header">
+        <div class="mobile-menu-title">
+            <h3>القائمة الرئيسية</h3>
+        </div>
+        <button class="mobile-menu-close" id="mobile-menu-close">
+            <i class="icon-close"></i>
+        </button>
+    </div>
+    
+    <div class="mobile-menu-content">
+        <!-- User Account Section -->
+        <div class="mobile-user-section">
+            {% if user.is_authenticated %}
+                <div class="mobile-user-info">
+                    <div class="user-avatar">
+                        {% if user.avatar %}
+                            <img src="{{ user.avatar }}" alt="{{ user.name }}">
+                        {% else %}
+                            <i class="icon-user"></i>
+                        {% endif %}
+                    </div>
+                    <div class="user-details">
+                        <h4>{{ user.name }}</h4>
+                        <p>{{ user.email }}</p>
+                    </div>
+                </div>
+                <div class="mobile-user-actions">
+                    <a href="{{ url('customer.profile') }}" class="mobile-btn">
+                        <i class="icon-user"></i>
+                        <span>حسابي</span>
+                    </a>
+                    <a href="{{ url('customer.orders') }}" class="mobile-btn">
+                        <i class="icon-package"></i>
+                        <span>طلباتي</span>
+                    </a>
+                    <a href="{{ url('auth.logout') }}" class="mobile-btn">
+                        <i class="icon-logout"></i>
+                        <span>تسجيل الخروج</span>
+                    </a>
+                </div>
+            {% else %}
+                <div class="mobile-auth-section">
+                    <a href="{{ url('auth.login') }}" class="mobile-auth-btn login-btn">
+                        <i class="icon-login"></i>
+                        <span>تسجيل الدخول</span>
+                    </a>
+                    <a href="{{ url('auth.register') }}" class="mobile-auth-btn register-btn">
+                        <i class="icon-user-plus"></i>
+                        <span>إنشاء حساب</span>
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- Search Section -->
+        <div class="mobile-search-section">
+            <salla-search placeholder="ابحث عن المنتجات..."></salla-search>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="mobile-nav">
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item">
+                    <a href="{{ url('home') }}" class="mobile-nav-link">
+                        <i class="icon-home"></i>
+                        <span>الرئيسية</span>
+                    </a>
+                </li>
+                
+                {% for category in store.categories %}
+                    <li class="mobile-nav-item {% if category.children %}has-children{% endif %}">
+                        <div class="mobile-nav-link-wrapper">
+                            <a href="{{ category.url }}" class="mobile-nav-link">
+                                <i class="icon-category"></i>
+                                <span>{{ category.name }}</span>
+                            </a>
+                            {% if category.children %}
+                                <button class="mobile-nav-toggle">
+                                    <i class="icon-arrow-down"></i>
+                                </button>
+                            {% endif %}
+                        </div>
+                        
+                        {% if category.children %}
+                            <ul class="mobile-sub-nav">
+                                {% for subcategory in category.children %}
+                                    <li class="mobile-sub-nav-item">
+                                        <a href="{{ subcategory.url }}" class="mobile-sub-nav-link">
+                                            {{ subcategory.name }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+                
+                <li class="mobile-nav-item">
+                    <a href="{{ url('offers') }}" class="mobile-nav-link special-link">
+                        <i class="icon-tag"></i>
+                        <span>العروض</span>
+                        <span class="nav-badge">جديد</span>
+                    </a>
+                </li>
+                
+                <li class="mobile-nav-item">
+                    <a href="{{ url('brands') }}" class="mobile-nav-link">
+                        <i class="icon-star"></i>
+                        <span>الماركات</span>
+                    </a>
+                </li>
+                
+                <li class="mobile-nav-item">
+                    <a href="{{ url('customer.wishlist') }}" class="mobile-nav-link">
+                        <i class="icon-heart"></i>
+                        <span>المفضلة</span>
+                        <salla-count class="nav-count" type="wishlist"></salla-count>
+                    </a>
+                </li>
+                
+                <li class="mobile-nav-item">
+                    <a href="{{ url('compare') }}" class="mobile-nav-link">
+                        <i class="icon-compare"></i>
+                        <span>المقارنة</span>
+                        <salla-count class="nav-count" type="compare"></salla-count>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Quick Actions -->
+        <div class="mobile-quick-actions">
+            <h4>روابط سريعة</h4>
+            <div class="quick-actions-grid">
+                <a href="{{ url('about') }}" class="quick-action">
+                    <i class="icon-info"></i>
+                    <span>من نحن</span>
+                </a>
+                <a href="{{ url('contact') }}" class="quick-action">
+                    <i class="icon-phone"></i>
+                    <span>اتصل بنا</span>
+                </a>
+                <a href="{{ url('track-order') }}" class="quick-action">
+                    <i class="icon-tracking"></i>
+                    <span>تتبع الطلب</span>
+                </a>
+                <a href="{{ url('faq') }}" class="quick-action">
+                    <i class="icon-help"></i>
+                    <span>الأسئلة الشائعة</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Language & Currency -->
+        <div class="mobile-settings">
+            {% if store.languages|length > 1 %}
+                <div class="mobile-setting-item">
+                    <label>اللغة:</label>
+                    <salla-localization-modal type="language"></salla-localization-modal>
+                </div>
+            {% endif %}
+            
+            {% if store.currencies|length > 1 %}
+                <div class="mobile-setting-item">
+                    <label>العملة:</label>
+                    <salla-localization-modal type="currency"></salla-localization-modal>
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- Social Links -->
+        <div class="mobile-social">
+            <h4>تابعنا على</h4>
+            <div class="mobile-social-links">
+                {% if store.social.facebook %}
+                    <a href="{{ store.social.facebook }}" target="_blank" class="mobile-social-link facebook">
+                        <i class="icon-facebook"></i>
+                    </a>
+                {% endif %}
+                {% if store.social.twitter %}
+                    <a href="{{ store.social.twitter }}" target="_blank" class="mobile-social-link twitter">
+                        <i class="icon-twitter"></i>
+                    </a>
+                {% endif %}
+                {% if store.social.instagram %}
+                    <a href="{{ store.social.instagram }}" target="_blank" class="mobile-social-link instagram">
+                        <i class="icon-instagram"></i>
+                    </a>
+                {% endif %}
+                {% if store.social.youtube %}
+                    <a href="{{ store.social.youtube }}" target="_blank" class="mobile-social-link youtube">
+                        <i class="icon-youtube"></i>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="mobile-contact">
+            {% if store.phone %}
+                <a href="tel:{{ store.phone }}" class="mobile-contact-item">
+                    <i class="icon-phone"></i>
+                    <span>{{ store.phone }}</span>
+                </a>
+            {% endif %}
+            {% if store.email %}
+                <a href="mailto:{{ store.email }}" class="mobile-contact-item">
+                    <i class="icon-email"></i>
+                    <span>{{ store.email }}</span>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu-overlay"></div>
