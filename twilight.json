@@ -1,6 +1,6 @@
 {
   "name": "Noor Store",
-  "description": "ثيم نور - ثيم أنيق ومتطور للمتاجر الالكترونية",
+  "description": "Noor Store - Modern and elegant theme for e-commerce stores",
   "version": "1.0.0",
   "author": {
     "name": "Claude Developer",
@@ -21,66 +21,9 @@
       "assets/js/app.js"
     ]
   },
-  "demo_store": {
-    "categories": [
-      {
-        "name": "الملابس",
-        "description": "مجموعة متنوعة من الملابس العصرية",
-        "subcategories": [
-          "ملابس رجالية",
-          "ملابس نسائية", 
-          "ملابس أطفال"
-        ]
-      },
-      {
-        "name": "الإلكترونيات",
-        "description": "أحدث الأجهزة الإلكترونية",
-        "subcategories": [
-          "هواتف ذكية",
-          "حاسوب محمول",
-          "اكسسوارات"
-        ]
-      },
-      {
-        "name": "المنزل والحديقة",
-        "description": "كل ما تحتاجه للمنزل",
-        "subcategories": [
-          "أثاث",
-          "ديكورات",
-          "أدوات المطبخ"
-        ]
-      },
-      {
-        "name": "الرياضة واللياقة",
-        "description": "معدات رياضية ولياقة بدنية",
-        "subcategories": [
-          "ملابس رياضية",
-          "معدات تمرين",
-          "مكملات غذائية"
-        ]
-      }
-    ],
-    "products": [
-      {
-        "name": "منتج تجريبي 1",
-        "price": "299.00",
-        "category": "الملابس"
-      },
-      {
-        "name": "منتج تجريبي 2", 
-        "price": "599.00",
-        "category": "الإلكترونيات"
-      },
-      {
-        "name": "منتج تجريبي 3",
-        "price": "199.00", 
-        "category": "المنزل والحديقة"
-      }
-    ]
-  },
   "features": [
     "multi_language",
-    "rtl_support",
+    "rtl_support", 
     "responsive_design",
     "seo_optimized",
     "fast_loading",
@@ -100,35 +43,35 @@
     "primary_color": {
       "type": "color",
       "default": "#2563eb",
-      "label": "اللون الأساسي"
+      "label": "Primary Color"
     },
     "secondary_color": {
       "type": "color", 
       "default": "#7c3aed",
-      "label": "اللون الثانوي"
+      "label": "Secondary Color"
     },
     "logo_width": {
       "type": "range",
       "default": 150,
       "min": 100,
       "max": 300,
-      "label": "عرض الشعار (بكسل)"
+      "label": "Logo Width (pixels)"
     },
     "show_search_bar": {
       "type": "boolean",
       "default": true,
-      "label": "عرض شريط البحث"
+      "label": "Show Search Bar"
     },
     "products_per_row": {
       "type": "select",
       "default": 4,
       "options": [
-        {"value": 2, "label": "منتجان"},
-        {"value": 3, "label": "3 منتجات"},
-        {"value": 4, "label": "4 منتجات"},
-        {"value": 5, "label": "5 منتجات"}
+        {"value": 2, "label": "2 Products"},
+        {"value": 3, "label": "3 Products"},
+        {"value": 4, "label": "4 Products"},
+        {"value": 5, "label": "5 Products"}
       ],
-      "label": "عدد المنتجات في الصف"
+      "label": "Products Per Row"
     }
   }
 }
