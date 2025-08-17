@@ -1,77 +1,12 @@
 {
   "name": "Noor Store",
-  "description": "Noor Store - Modern and elegant theme for e-commerce stores",
+  "description": "Noor Store Theme",
   "version": "1.0.0",
   "author": {
-    "name": "Claude Developer",
-    "email": "developer@example.com"
-  },
-  "preview": {
-    "desktop": "assets/images/preview-desktop.jpg",
-    "mobile": "assets/images/preview-mobile.jpg"
+    "name": "Developer",
+    "email": "dev@example.com"
   },
   "compatibility": {
     "api_version": "2.0"
-  },
-  "assets": {
-    "css": [
-      "assets/css/app.css"
-    ],
-    "js": [
-      "assets/js/app.js"
-    ]
-  },
-  "features": [
-    "multi_language",
-    "rtl_support", 
-    "responsive_design",
-    "seo_optimized",
-    "fast_loading",
-    "customizable_colors",
-    "slider_banners",
-    "product_quick_view",
-    "wishlist",
-    "compare_products",
-    "social_login",
-    "newsletter_subscription"
-  ],
-  "support": {
-    "email": "support@example.com",
-    "documentation": "https://docs.example.com"
-  },
-  "settings": {
-    "primary_color": {
-      "type": "color",
-      "default": "#2563eb",
-      "label": "Primary Color"
-    },
-    "secondary_color": {
-      "type": "color", 
-      "default": "#7c3aed",
-      "label": "Secondary Color"
-    },
-    "logo_width": {
-      "type": "range",
-      "default": 150,
-      "min": 100,
-      "max": 300,
-      "label": "Logo Width (pixels)"
-    },
-    "show_search_bar": {
-      "type": "boolean",
-      "default": true,
-      "label": "Show Search Bar"
-    },
-    "products_per_row": {
-      "type": "select",
-      "default": 4,
-      "options": [
-        {"value": 2, "label": "2 Products"},
-        {"value": 3, "label": "3 Products"},
-        {"value": 4, "label": "4 Products"},
-        {"value": 5, "label": "5 Products"}
-      ],
-      "label": "Products Per Row"
-    }
   }
 }
