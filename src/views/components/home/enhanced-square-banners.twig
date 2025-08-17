@@ -1,0 +1,23 @@
+<div class="enhanced-square-banners">
+    {% if component.banners %}
+        <div class="banners-grid">
+            {% for banner in component.banners %}
+                <div class="banner-item">
+                    {% if banner.image %}
+                        <img src="{{ banner.image }}" alt="{{ banner.title|default('Banner') }}">
+                    {% endif %}
+                    {% if banner.title or banner.description %}
+                        <div class="banner-overlay">
+                            {% if banner.title %}
+                                <h3 class="banner-title">{{ banner.title }}</h3>
+                            {% endif %}
+                            {% if banner.description %}
+                                <p class="banner-description">{{ banner.description }}</p>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>

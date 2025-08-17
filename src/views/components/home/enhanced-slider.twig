@@ -1,0 +1,23 @@
+<div class="enhanced-slider">
+    {% if component.slides %}
+        <div class="slider-container">
+            {% for slide in component.slides %}
+                <div class="slide">
+                    {% if slide.image %}
+                        <img src="{{ slide.image }}" alt="{{ slide.title|default('Slide') }}">
+                    {% endif %}
+                    {% if slide.title or slide.description %}
+                        <div class="slide-content">
+                            {% if slide.title %}
+                                <h2 class="slide-title">{{ slide.title }}</h2>
+                            {% endif %}
+                            {% if slide.description %}
+                                <p class="slide-description">{{ slide.description }}</p>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>

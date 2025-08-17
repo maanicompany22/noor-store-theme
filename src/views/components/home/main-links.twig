@@ -1,0 +1,17 @@
+<div class="main-links">
+    {% if component.title %}
+        <h2 class="component-title">{{ component.title }}</h2>
+    {% endif %}
+    {% if component.links %}
+        <div class="links-grid">
+            {% for link in component.links %}
+                <a href="{{ link.url|default('#') }}" class="main-link">
+                    {% if link.icon %}
+                        <i class="{{ link.icon }}"></i>
+                    {% endif %}
+                    <span>{{ link.title }}</span>
+                </a>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>

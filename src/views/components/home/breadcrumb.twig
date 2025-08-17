@@ -1,0 +1,14 @@
+<nav class="breadcrumb">
+    <ol class="breadcrumb-list">
+        <li><a href="{{ url('home') }}">الرئيسية</a></li>
+        {% for item in breadcrumb %}
+            <li>
+                {% if item.url %}
+                    <a href="{{ item.url }}">{{ item.name }}</a>
+                {% else %}
+                    <span>{{ item.name }}</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+</nav>

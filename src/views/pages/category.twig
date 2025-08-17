@@ -1,0 +1,14 @@
+{% extends 'layouts.master' %}
+
+{% block title %}{{ category.name }} - {{ store.name }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="category-page">
+        <h1 class="page-title">{{ category.name }}</h1>
+        <div class="products-grid">
+            <salla-products-list source="category" category-id="{{ category.id }}"></salla-products-list>
+        </div>
+    </div>
+</div>
+{% endblock %}
