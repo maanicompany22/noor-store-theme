@@ -3,27 +3,156 @@
 {% block title %}{{ store.name }} - الرئيسية{% endblock %}
 
 {% block content %}
+<!-- Hero Slider Section -->
 <section class="hero-section">
+    <div class="hero-slider">
+        <salla-slider auto-play="true" duration="5000" dots="true" arrows="true">
+            <div class="hero-slide">
+                <div class="hero-image">
+                    <img src="{{ 'assets/images/hero-1.jpg' | asset }}" alt="عروض خاصة" loading="lazy">
+                </div>
+                <div class="hero-content">
+                    <div class="container">
+                        <div class="hero-text">
+                            <h1 class="hero-title">أهلاً وسهلاً بكم في متجر نور</h1>
+                            <p class="hero-description">اكتشف مجموعتنا المتنوعة من المنتجات عالية الجودة بأفضل الأسعار</p>
+                            <a href="{{ url('products') }}" class="hero-btn btn btn-primary">
+                                تسوق الآن
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-image">
+                    <img src="{{ 'assets/images/hero-2.jpg' | asset }}" alt="منتجات جديدة" loading="lazy">
+                </div>
+                <div class="hero-content">
+                    <div class="container">
+                        <div class="hero-text">
+                            <h1 class="hero-title">منتجات جديدة وصلت للتو</h1>
+                            <p class="hero-description">كن أول من يحصل على أحدث المنتجات بخصومات حصرية</p>
+                            <a href="{{ url('products') }}" class="hero-btn btn btn-primary">
+                                اكتشف المنتجات
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </salla-slider>
+    </div>
+</section>
+
+<!-- Quick Links Section -->
+<section class="quick-links-section">
     <div class="container">
-        <div class="hero-content">
-            <h1 class="hero-title">مرحباً بكم في متجر نور</h1>
-            <p class="hero-description">اكتشف مجموعتنا المتنوعة من المنتجات عالية الجودة</p>
-            <a href="{{ url('products') }}" class="btn btn-primary">تسوق الآن</a>
+        <div class="quick-links-grid">
+            <div class="quick-link-item">
+                <div class="quick-link-icon">
+                    <i class="sicon-packed-box"></i>
+                </div>
+                <div class="quick-link-content">
+                    <h3>منتجات جاهزة</h3>
+                    <p>منتجات عالية الجودة جاهزة للشحن</p>
+                </div>
+            </div>
+            <div class="quick-link-item">
+                <div class="quick-link-icon">
+                    <i class="sicon-fabric-swatch"></i>
+                </div>
+                <div class="quick-link-content">
+                    <h3>خدمة حسب الطلب</h3>
+                    <p>نصنع لك ما تريد بأعلى معايير الجودة</p>
+                </div>
+            </div>
+            <div class="quick-link-item">
+                <div class="quick-link-icon">
+                    <i class="sicon-cake"></i>
+                </div>
+                <div class="quick-link-content">
+                    <h3>أكل ومشروبات</h3>
+                    <p>أشهى المأكولات وألذ المشروبات</p>
+                </div>
+            </div>
+            <div class="quick-link-item">
+                <div class="quick-link-icon">
+                    <i class="sicon-gift"></i>
+                </div>
+                <div class="quick-link-content">
+                    <h3>هدايا مميزة</h3>
+                    <p>اختر هدايا فريدة لأحبائك</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
+<!-- Features Section -->
+<section class="features-section">
+    <div class="container">
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="sicon-shipping"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>شحن مجاني</h3>
+                    <p>للطلبات أكثر من 200 ريال</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="sicon-return"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>إرجاع مجاني</h3>
+                    <p>خلال 14 يوم من الشراء</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="sicon-support"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>دعم فني 24/7</h3>
+                    <p>نحن هنا لمساعدتك دائماً</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="sicon-secure"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>دفع آمن</h3>
+                    <p>حماية كاملة لبياناتك</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Categories Section -->
 <section class="categories-section">
     <div class="container">
-        <h2 class="section-title">تسوق حسب الفئة</h2>
+        <div class="section-header">
+            <h2 class="section-title">تسوق حسب الفئة</h2>
+            <p class="section-description">اكتشف مجموعتنا المتنوعة من المنتجات</p>
+        </div>
         <div class="categories-grid">
             {% for category in store.categories|slice(0, 6) %}
                 <div class="category-card">
-                    <a href="{{ category.url }}">
-                        {% if category.image %}
-                            <img src="{{ category.image }}" alt="{{ category.name }}">
-                        {% endif %}
-                        <h3>{{ category.name }}</h3>
+                    <a href="{{ category.url }}" class="category-link">
+                        <div class="category-image">
+                            {% if category.image %}
+                                <img src="{{ category.image }}" alt="{{ category.name }}" loading="lazy">
+                            {% else %}
+                                <img src="{{ 'assets/images/category-placeholder.jpg' | asset }}" alt="{{ category.name }}" loading="lazy">
+                            {% endif %}
+                            <div class="category-overlay">
+                                <span class="category-name">{{ category.name }}</span>
+                                <span class="category-count">({{ category.products_count }} منتج)</span>
+                            </div>
+                        </div>
                     </a>
                 </div>
             {% endfor %}
@@ -31,10 +160,212 @@
     </div>
 </section>
 
-<section class="products-section">
+<!-- Featured Products Section -->
+<section class="featured-products-section">
     <div class="container">
-        <h2 class="section-title">المنتجات المميزة</h2>
-        <salla-products-slider source="featured" auto-play="true"></salla-products-slider>
+        <div class="section-header">
+            <h2 class="section-title">المنتجات المميزة</h2>
+            <p class="section-description">أفضل ما لدينا من منتجات مختارة بعناية</p>
+        </div>
+        <salla-products-slider 
+            source="featured" 
+            display-mode="grid"
+            block-title=""
+            products-per-row="4"
+            auto-play="true">
+        </salla-products-slider>
+    </div>
+</section>
+
+<!-- Sale Banner Section -->
+<section class="sale-banner-section">
+    <div class="container">
+        <div class="sale-banner">
+            <div class="sale-content">
+                <div class="sale-text">
+                    <h2>عروض نهاية الموسم</h2>
+                    <p>خصومات تصل إلى 70% على مجموعة مختارة من المنتجات</p>
+                    <a href="{{ url('offers') }}" class="sale-btn btn btn-light">
+                        تسوق الآن
+                    </a>
+                </div>
+                <div class="sale-image">
+                    <img src="{{ 'assets/images/sale-banner.jpg' | asset }}" alt="عروض خاصة" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Latest Products Section -->
+<section class="latest-products-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">أحدث المنتجات</h2>
+            <p class="section-description">آخر ما وصل إلى متجرنا</p>
+        </div>
+        <salla-products-slider 
+            source="latest" 
+            display-mode="grid"
+            block-title=""
+            products-per-row="4"
+            auto-play="true">
+        </salla-products-slider>
+    </div>
+</section>
+
+<!-- Square Banners Section -->
+<section class="square-banners-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">تصفح حسب التصنيف</h2>
+            <p class="section-description">سهِّل تجربة التسوُّق والوصول لمنتجاتك</p>
+        </div>
+        <div class="square-banners-grid">
+            <div class="square-banner">
+                <img src="{{ 'assets/images/banner-1.jpg' | asset }}" alt="تصفَّح حسب التصنيف" loading="lazy">
+                <div class="banner-overlay">
+                    <h3>تصفَّح حسب التصنيف</h3>
+                    <p>سهِّل تجربة التسوُّق والوصول لمنتجاتك</p>
+                </div>
+            </div>
+            <div class="square-banner">
+                <img src="{{ 'assets/images/banner-2.jpg' | asset }}" alt="منتجات جديدة" loading="lazy">
+                <div class="banner-overlay">
+                    <h3>منتجات جديدة</h3>
+                    <p>اكتشف أحدث المنتجات التي وصلت للتو</p>
+                </div>
+            </div>
+            <div class="square-banner">
+                <img src="{{ 'assets/images/banner-3.jpg' | asset }}" alt="عروض خاصة" loading="lazy">
+                <div class="banner-overlay">
+                    <h3>عروض خاصة</h3>
+                    <p>خصومات حصرية على مجموعة مختارة</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">آراء عملائنا</h2>
+            <p class="section-description">ما يقوله عملاؤنا عن تجربتهم معنا</p>
+        </div>
+        <div class="testimonials-slider">
+            <salla-slider auto-play="true" duration="6000" dots="true">
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"خدمة ممتازة ومنتجات عالية الجودة. أنصح الجميع بالتعامل مع هذا المتجر."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="{{ 'assets/images/avatar1.jpg' | asset }}" alt="أحمد محمد">
+                            </div>
+                            <div class="author-info">
+                                <h4>أحمد محمد</h4>
+                                <div class="rating">
+                                    <i class="sicon-star-filled"></i>
+                                    <i class="sicon-star-filled"></i>
+                                    <i class="sicon-star-filled"></i>
+                                    <i class="sicon-star-filled"></i>
+                                    <i class="sicon-star-filled"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"سرعة في التوصيل وجودة في المنتجات. تجربة تسوق رائعة حقاً."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="{{ 'assets/images/avatar2.jpg' | asset }}" alt="فاطمة العلي">
+                            </div>
+                            <div class="author-info">
+                                <h4>فاطمة العلي</h4>
+                                <div class="rating">
+                                    <i class="sicon-star-filled"></i>
+                                    <i class="sicon-star-filled"></i>
+                                    <i class="sicon-star-filled"></i>
+                                    <i class="sicon-star-filled"></i>
+                                    <i class="sicon-star-filled"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </salla-slider>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="newsletter-section">
+    <div class="container">
+        <div class="newsletter-content">
+            <div class="newsletter-text">
+                <h2>اشترك في نشرتنا البريدية</h2>
+                <p>احصل على آخر العروض والمنتجات الجديدة</p>
+            </div>
+            <div class="newsletter-form">
+                <salla-newsletter-subscription placeholder="أدخل بريدك الإلكتروني"></salla-newsletter-subscription>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Instagram Feed Section -->
+<section class="instagram-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">تابعنا على انستقرام</h2>
+            <p class="section-description">@{{ store.social.instagram|default('noorstore') }}</p>
+        </div>
+        <div class="instagram-grid">
+            {% for i in 1..6 %}
+                <div class="instagram-item">
+                    <img src="{{ 'assets/images/instagram-' ~ i ~ '.jpg' | asset }}" alt="Instagram Post" loading="lazy">
+                    <div class="instagram-overlay">
+                        <i class="sicon-instagram"></i>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Store Features Section -->
+<section class="store-features-section">
+    <div class="container">
+        <div class="features-cards-grid">
+            <div class="feature-card">
+                <div class="feature-card-icon">
+                    <i class="sicon-credit-card"></i>
+                </div>
+                <h3>طرق دفع متعددة</h3>
+                <p>ادفع بالطريقة التي تفضلها: بطاقة ائتمان، مدى، أو نقداً عند الاستلام</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-card-icon">
+                    <i class="sicon-truck"></i>
+                </div>
+                <h3>توصيل سريع</h3>
+                <p>نوصل طلبك خلال 24-48 ساعة في جميع أنحاء المملكة</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-card-icon">
+                    <i class="sicon-shield-check"></i>
+                </h3>
+                <h3>ضمان الجودة</h3>
+                <p>جميع منتجاتنا مضمونة الجودة مع إمكانية الإرجاع</p>
+            </div>
+        </div>
     </div>
 </section>
 {% endblock %}

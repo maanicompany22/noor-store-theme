@@ -22,7 +22,14 @@
         "component-store-features",
         "component-youtube",
         "menu-images",
-        "filters"
+        "filters",
+        "component-newsletter",
+        "component-instagram",
+        "component-categories-grid",
+        "component-hero-slider",
+        "component-quick-links",
+        "component-sale-banner",
+        "component-latest-products"
     ],
     "settings": [
         {
@@ -90,6 +97,74 @@
             "required": false,
             "value": true,
             "selected": true
+        },
+        {
+            "type": "string",
+            "icon": "sicon-palette",
+            "label": "اللون الأساسي",
+            "description": "اللون الرئيسي للثيم",
+            "id": "primary_color",
+            "format": "color",
+            "required": false,
+            "value": "#2563eb"
+        },
+        {
+            "type": "string",
+            "icon": "sicon-palette",
+            "label": "اللون الثانوي",
+            "description": "اللون الثانوي للثيم",
+            "id": "secondary_color",
+            "format": "color",
+            "required": false,
+            "value": "#7c3aed"
+        },
+        {
+            "type": "string",
+            "icon": "sicon-palette",
+            "label": "لون التمييز",
+            "description": "لون التمييز والتنبيهات",
+            "id": "accent_color",
+            "format": "color",
+            "required": false,
+            "value": "#f59e0b"
+        },
+        {
+            "type": "number",
+            "icon": "sicon-layout-grid",
+            "label": "عدد المنتجات في الصف",
+            "description": "عدد المنتجات المعروضة في كل صف",
+            "id": "products_per_row",
+            "format": "select",
+            "required": false,
+            "value": 4,
+            "options": [
+                {"label": "3 منتجات", "value": 3},
+                {"label": "4 منتجات", "value": 4},
+                {"label": "5 منتجات", "value": 5},
+                {"label": "6 منتجات", "value": 6}
+            ]
+        },
+        {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": "تفعيل التأثيرات الحركية",
+            "description": "تفعيل التأثيرات الحركية والانتقالات",
+            "id": "enable_animations",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        },
+        {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": "تفعيل التحميل الكسول للصور",
+            "description": "تحسين سرعة تحميل الصفحة",
+            "id": "enable_lazy_loading",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
         }
     ],
     "components": [
@@ -151,7 +226,6 @@
                             "format": "text",
                             "description": "يتم عرضه على الصورة بحجم بارز جداً",
                             "placeholder": "يمكنك إضافة عنوان بارز هنا...",
-                            "hide": false,
                             "minLength": 0,
                             "maxLength": 100
                         },
@@ -317,11 +391,216 @@
                     ]
                 }
             ]
+        },
+        {
+            "key": "c4d5e6f7-8g9h-0i1j-2k3l-4m5n6o7p8q9",
+            "title": "ميزات المتجر",
+            "icon": "sicon-star",
+            "path": "home.store-features",
+            "image": "https://cdn.salla.sa/mQgZlG/featured-section-preview.png",
+            "is_default": true,
+            "fields": [
+                {
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "العنوان الرئيسي",
+                    "multilanguage": true,
+                    "id": "features_title",
+                    "value": "مميزات متجرنا",
+                    "required": false,
+                    "format": "text",
+                    "placeholder": "أدخل العنوان هنا..."
+                },
+                {
+                    "id": "features",
+                    "type": "collection",
+                    "format": "collection",
+                    "required": true,
+                    "minLength": 3,
+                    "maxLength": 6,
+                    "item_label": "ميزة",
+                    "value": [
+                        {
+                            "features.icon": "sicon-shipping",
+                            "features.title": "شحن مجاني",
+                            "features.description": "للطلبات أكثر من 200 ريال"
+                        },
+                        {
+                            "features.icon": "sicon-return",
+                            "features.title": "إرجاع مجاني",
+                            "features.description": "خلال 14 يوم من الشراء"
+                        },
+                        {
+                            "features.icon": "sicon-support",
+                            "features.title": "دعم فني 24/7",
+                            "features.description": "نحن هنا لمساعدتك دائماً"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "label": "أيقونة الميزة",
+                            "id": "features.icon",
+                            "value": "sicon-star",
+                            "required": false,
+                            "format": "icon"
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "label": "عنوان الميزة",
+                            "multilanguage": true,
+                            "id": "features.title",
+                            "value": null,
+                            "required": true,
+                            "format": "text",
+                            "placeholder": "أدخل عنوان الميزة"
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-typography",
+                            "label": "وصف الميزة",
+                            "multilanguage": true,
+                            "id": "features.description",
+                            "value": null,
+                            "required": false,
+                            "format": "textarea",
+                            "placeholder": "أدخل وصف الميزة"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "d5e6f7g8-9h0i-1j2k-3l4m-5n6o7p8q9r0",
+            "title": "آراء العملاء",
+            "icon": "sicon-chat",
+            "path": "home.testimonials",
+            "image": "https://cdn.salla.sa/mQgZlG/testimonials-preview.png",
+            "is_default": true,
+            "fields": [
+                {
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "العنوان الرئيسي",
+                    "multilanguage": true,
+                    "id": "testimonials_title",
+                    "value": "آراء عملائنا",
+                    "required": false,
+                    "format": "text"
+                },
+                {
+                    "id": "testimonials",
+                    "type": "collection",
+                    "format": "collection",
+                    "required": true,
+                    "minLength": 2,
+                    "maxLength": 10,
+                    "item_label": "رأي",
+                    "value": [
+                        {
+                            "testimonials.content": "خدمة ممتازة ومنتجات عالية الجودة. أنصح الجميع بالتعامل مع هذا المتجر.",
+                            "testimonials.author": "أحمد محمد",
+                            "testimonials.rating": 5,
+                            "testimonials.avatar": ""
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "string",
+                            "icon": "sicon-typography",
+                            "label": "نص الرأي",
+                            "multilanguage": true,
+                            "id": "testimonials.content",
+                            "value": null,
+                            "required": true,
+                            "format": "textarea",
+                            "placeholder": "أدخل رأي العميل"
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-user",
+                            "label": "اسم العميل",
+                            "multilanguage": true,
+                            "id": "testimonials.author",
+                            "value": null,
+                            "required": true,
+                            "format": "text",
+                            "placeholder": "أدخل اسم العميل"
+                        },
+                        {
+                            "type": "number",
+                            "icon": "sicon-star",
+                            "label": "التقييم",
+                            "id": "testimonials.rating",
+                            "value": 5,
+                            "required": false,
+                            "format": "select",
+                            "options": [
+                                {"label": "5 نجوم", "value": 5},
+                                {"label": "4 نجوم", "value": 4},
+                                {"label": "3 نجوم", "value": 3},
+                                {"label": "2 نجوم", "value": 2},
+                                {"label": "1 نجمة", "value": 1}
+                            ]
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-image",
+                            "label": "صورة العميل",
+                            "id": "testimonials.avatar",
+                            "value": null,
+                            "required": false,
+                            "format": "image"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "e6f7g8h9-0i1j-2k3l-4m5n-6o7p8q9r0s1",
+            "title": "النشرة البريدية",
+            "icon": "sicon-mail",
+            "path": "home.newsletter",
+            "image": "https://cdn.salla.sa/mQgZlG/newsletter-preview.png",
+            "is_default": true,
+            "fields": [
+                {
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "العنوان",
+                    "multilanguage": true,
+                    "id": "newsletter_title",
+                    "value": "اشترك في نشرتنا البريدية",
+                    "required": false,
+                    "format": "text"
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-typography",
+                    "label": "الوصف",
+                    "multilanguage": true,
+                    "id": "newsletter_description",
+                    "value": "احصل على آخر العروض والمنتجات الجديدة",
+                    "required": false,
+                    "format": "textarea"
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-palette",
+                    "label": "لون الخلفية",
+                    "id": "newsletter_bg_color",
+                    "value": "#2563eb",
+                    "required": false,
+                    "format": "color"
+                }
+            ]
         }
     ],
     "support_url": "https://salla.com/",
     "description": {
-        "ar": "ثيم نور - ثيم أنيق ومتطور للمتاجر الالكترونية مع مجموعة كبيرة من المزايا",
-        "en": "Noor Store - Modern and elegant theme for e-commerce stores with a wide range of features"
+        "ar": "ثيم نور - ثيم أنيق ومتطور للمتاجر الالكترونية مع مجموعة كبيرة من المزايا والبلوكات المختلفة",
+        "en": "Noor Store - Modern and elegant theme for e-commerce stores with a wide range of features and components"
     }
 }
