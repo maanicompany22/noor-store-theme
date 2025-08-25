@@ -193,14 +193,14 @@
                     "item_label": "صورة",
                     "value": [
                         {
-                            "slides.image": "https://cdn.salla.sa/ZrBEO/MopzhoqpTkDObcKc8Q8n77AuydanfsGXdZO7iinH.jpg",
-                            "slides.title": "روِّج لمنتجاتك كصور متحركة",
-                            "slides.description": "اعرض المنتجات التي تود إبرازها لزوّار متجرك في هذه المساحة"
+                            "image": "https://cdn.salla.sa/ZrBEO/MopzhoqpTkDObcKc8Q8n77AuydanfsGXdZO7iinH.jpg",
+                            "title": "روِّج لمنتجاتك كصور متحركة",
+                            "description": "اعرض المنتجات التي تود إبرازها لزوّار متجرك في هذه المساحة"
                         },
                         {
-                            "slides.image": "https://cdn.salla.sa/ZrBEO/3gOhYSaIhaHxhH2IHWxJYDl9JHwxP6dGKiZFSq4K.jpg",
-                            "slides.title": "شجّع زوار متجرك على الشراء عبر عروض خاصة",
-                            "slides.description": "اعرض المنتجات التي تود إبرازها لزوّار متجرك في هذه المساحة"
+                            "image": "https://cdn.salla.sa/ZrBEO/3gOhYSaIhaHxhH2IHWxJYDl9JHwxP6dGKiZFSq4K.jpg",
+                            "title": "شجّع زوار متجرك على الشراء عبر عروض خاصة",
+                            "description": "اعرض المنتجات التي تود إبرازها لزوّار متجرك في هذه المساحة"
                         }
                     ],
                     "fields": [
@@ -208,7 +208,7 @@
                             "type": "string",
                             "icon": "sicon-image",
                             "value": null,
-                            "id": "slides.image",
+                            "id": "image",
                             "label": "صورة البنر",
                             "format": "image",
                             "required": true,
@@ -220,7 +220,7 @@
                             "icon": "sicon-format-text-alt",
                             "label": "عنوان رئيسي",
                             "multilanguage": true,
-                            "id": "slides.title",
+                            "id": "title",
                             "value": null,
                             "required": false,
                             "format": "text",
@@ -234,7 +234,7 @@
                             "icon": "sicon-typography",
                             "label": "نص إضافي",
                             "multilanguage": true,
-                            "id": "slides.description",
+                            "id": "description",
                             "value": null,
                             "description": "يتم عرضه على الصورة بحجم أصغر من العنوان الرئيسي",
                             "format": "textarea",
@@ -279,19 +279,19 @@
                     "item_label": "رابط ",
                     "value": [
                         {
-                            "links.icon": "sicon-packed-box",
-                            "links.title": "منتج جاهز",
-                            "links.url__type": "offers_link"
+                            "icon": "sicon-packed-box",
+                            "title": "منتج جاهز",
+                            "url__type": "offers_link"
                         },
                         {
-                            "links.icon": "sicon-fabric-swatch",
-                            "links.title": "خدمة حسب الطلب",
-                            "links.url__type": "offers_link"
+                            "icon": "sicon-fabric-swatch",
+                            "title": "خدمة حسب الطلب",
+                            "url__type": "offers_link"
                         },
                         {
-                            "links.icon": "sicon-cake",
-                            "links.title": "أكل ومشروبات",
-                            "links.url__type": "offers_link"
+                            "icon": "sicon-cake",
+                            "title": "أكل ومشروبات",
+                            "url__type": "offers_link"
                         }
                     ],
                     "fields": [
@@ -299,7 +299,7 @@
                             "type": "string",
                             "icon": "sicon-format-text-alt",
                             "label": "ايقونة الرابط",
-                            "id": "links.icon",
+                            "id": "icon",
                             "value": "sicon-store2",
                             "required": false,
                             "format": "icon",
@@ -310,7 +310,7 @@
                             "type": "string",
                             "icon": "sicon-format-text-alt",
                             "multilanguage": true,
-                            "id": "links.title",
+                            "id": "title",
                             "value": null,
                             "required": false,
                             "format": "text",
@@ -342,9 +342,9 @@
                     "item_label": "صورة ",
                     "value": [
                         {
-                            "banners.image": "https://cdn.salla.sa/mQgZlG/pzOCEw10wCfXeVSpKnL0Ifd1O9ZkTfnZ17RkE14R.jpg",
-                            "banners.title": "تصفَّح حسب التصنيف",
-                            "banners.description": "سهِّل تجربة التسوُّق والوصول لمنتجاتك"
+                            "image": "https://cdn.salla.sa/mQgZlG/pzOCEw10wCfXeVSpKnL0Ifd1O9ZkTfnZ17RkE14R.jpg",
+                            "title": "تصفَّح حسب التصنيف",
+                            "description": "سهِّل تجربة التسوُّق والوصول لمنتجاتك"
                         }
                     ],
                     "fields": [
@@ -353,7 +353,7 @@
                             "icon": "sicon-image",
                             "value": null,
                             "label": "صورة البنر",
-                            "id": "banners.image",
+                            "id": "image",
                             "format": "image",
                             "required": true,
                             "placeholder": "",
@@ -364,13 +364,12 @@
                             "icon": "sicon-format-text-alt",
                             "label": "عنوان رئيسي",
                             "multilanguage": true,
-                            "id": "banners.title",
+                            "id": "title",
                             "value": null,
                             "required": false,
                             "format": "text",
                             "description": "نص يتم إضافته على الصورة بنمط خط كبير",
                             "placeholder": "أدخل النص هنا...",
-                            "hide": false,
                             "minLength": 0,
                             "maxLength": 100
                         },
@@ -379,7 +378,7 @@
                             "icon": "sicon-typography",
                             "label": "نص توضيحي",
                             "multilanguage": true,
-                            "id": "banners.description",
+                            "id": "description",
                             "value": null,
                             "description": "نص يتم إضافته على الصورة بخط أصغر من العنوان الرئيسي",
                             "format": "textarea",
@@ -421,19 +420,19 @@
                     "item_label": "ميزة",
                     "value": [
                         {
-                            "features.icon": "sicon-shipping",
-                            "features.title": "شحن مجاني",
-                            "features.description": "للطلبات أكثر من 200 ريال"
+                            "icon": "sicon-shipping",
+                            "title": "شحن مجاني",
+                            "description": "للطلبات أكثر من 200 ريال"
                         },
                         {
-                            "features.icon": "sicon-return",
-                            "features.title": "إرجاع مجاني",
-                            "features.description": "خلال 14 يوم من الشراء"
+                            "icon": "sicon-return",
+                            "title": "إرجاع مجاني",
+                            "description": "خلال 14 يوم من الشراء"
                         },
                         {
-                            "features.icon": "sicon-support",
-                            "features.title": "دعم فني 24/7",
-                            "features.description": "نحن هنا لمساعدتك دائماً"
+                            "icon": "sicon-support",
+                            "title": "دعم فني 24/7",
+                            "description": "نحن هنا لمساعدتك دائماً"
                         }
                     ],
                     "fields": [
@@ -441,7 +440,7 @@
                             "type": "string",
                             "icon": "sicon-format-text-alt",
                             "label": "أيقونة الميزة",
-                            "id": "features.icon",
+                            "id": "icon",
                             "value": "sicon-star",
                             "required": false,
                             "format": "icon"
@@ -451,7 +450,7 @@
                             "icon": "sicon-format-text-alt",
                             "label": "عنوان الميزة",
                             "multilanguage": true,
-                            "id": "features.title",
+                            "id": "title",
                             "value": null,
                             "required": true,
                             "format": "text",
@@ -462,7 +461,7 @@
                             "icon": "sicon-typography",
                             "label": "وصف الميزة",
                             "multilanguage": true,
-                            "id": "features.description",
+                            "id": "description",
                             "value": null,
                             "required": false,
                             "format": "textarea",
@@ -500,10 +499,10 @@
                     "item_label": "رأي",
                     "value": [
                         {
-                            "testimonials.content": "خدمة ممتازة ومنتجات عالية الجودة. أنصح الجميع بالتعامل مع هذا المتجر.",
-                            "testimonials.author": "أحمد محمد",
-                            "testimonials.rating": 5,
-                            "testimonials.avatar": ""
+                            "content": "خدمة ممتازة ومنتجات عالية الجودة. أنصح الجميع بالتعامل مع هذا المتجر.",
+                            "author": "أحمد محمد",
+                            "rating": 5,
+                            "avatar": ""
                         }
                     ],
                     "fields": [
@@ -512,7 +511,7 @@
                             "icon": "sicon-typography",
                             "label": "نص الرأي",
                             "multilanguage": true,
-                            "id": "testimonials.content",
+                            "id": "content",
                             "value": null,
                             "required": true,
                             "format": "textarea",
@@ -523,7 +522,7 @@
                             "icon": "sicon-user",
                             "label": "اسم العميل",
                             "multilanguage": true,
-                            "id": "testimonials.author",
+                            "id": "author",
                             "value": null,
                             "required": true,
                             "format": "text",
@@ -533,7 +532,7 @@
                             "type": "number",
                             "icon": "sicon-star",
                             "label": "التقييم",
-                            "id": "testimonials.rating",
+                            "id": "rating",
                             "value": 5,
                             "required": false,
                             "format": "select",
@@ -549,7 +548,7 @@
                             "type": "string",
                             "icon": "sicon-image",
                             "label": "صورة العميل",
-                            "id": "testimonials.avatar",
+                            "id": "avatar",
                             "value": null,
                             "required": false,
                             "format": "image"
