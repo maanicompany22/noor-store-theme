@@ -1,211 +1,46 @@
 <!-- Footer -->
-<div class="footer-content">
+<footer class="main-footer">
     <div class="container">
-        <div class="footer-sections">
-            <!-- Store Info -->
+        <div class="footer-content">
             <div class="footer-section">
-                <div class="footer-logo">
-                    {% if store.logo %}
-                        <img src="{{ store.logo }}" alt="{{ store.name }}" class="footer-logo-img">
-                    {% else %}
-                        <h3 class="footer-logo-text">{{ store.name }}</h3>
-                    {% endif %}
-                </div>
-                <div class="footer-description">
-                    <p>{{ store.description|slice(0, 150) }}...</p>
-                </div>
-                <div class="footer-contact">
-                    {% if store.phone %}
-                        <div class="contact-item">
-                            <i class="icon-phone"></i>
-                            <a href="tel:{{ store.phone }}">{{ store.phone }}</a>
-                        </div>
-                    {% endif %}
-                    {% if store.email %}
-                        <div class="contact-item">
-                            <i class="icon-email"></i>
-                            <a href="mailto:{{ store.email }}">{{ store.email }}</a>
-                        </div>
-                    {% endif %}
-                    {% if store.address %}
-                        <div class="contact-item">
-                            <i class="icon-location"></i>
-                            <span>{{ store.address }}</span>
-                        </div>
-                    {% endif %}
-                </div>
+                <h3>عن المتجر</h3>
+                <p>{{ store.description|default('متجر نور - متجر إلكتروني متخصص في بيع المنتجات عالية الجودة') }}</p>
             </div>
-
-            <!-- Quick Links -->
+            
             <div class="footer-section">
-                <h3 class="footer-title">روابط سريعة</h3>
-                <ul class="footer-links">
+                <h3>روابط سريعة</h3>
+                <ul>
                     <li><a href="{{ url('home') }}">الرئيسية</a></li>
                     <li><a href="{{ url('products') }}">المنتجات</a></li>
                     <li><a href="{{ url('categories') }}">الفئات</a></li>
                     <li><a href="{{ url('offers') }}">العروض</a></li>
-                    <li><a href="{{ url('about') }}">من نحن</a></li>
-                    <li><a href="{{ url('contact') }}">اتصل بنا</a></li>
                 </ul>
-            </div>
-
-            <!-- Customer Service -->
-            <div class="footer-section">
-                <h3 class="footer-title">خدمة العملاء</h3>
-                <ul class="footer-links">
-                    <li><a href="{{ url('customer.profile') }}">حسابي</a></li>
-                    <li><a href="{{ url('customer.orders') }}">طلباتي</a></li>
-                    <li><a href="{{ url('customer.wishlist') }}">المفضلة</a></li>
-                    <li><a href="{{ url('track-order') }}">تتبع الطلب</a></li>
-                    <li><a href="{{ url('shipping-info') }}">معلومات الشحن</a></li>
-                    <li><a href="{{ url('return-policy') }}">سياسة الإرجاع</a></li>
-                    <li><a href="{{ url('faq') }}">الأسئلة الشائعة</a></li>
-                </ul>
-            </div>
-
-            <!-- Categories -->
-            <div class="footer-section">
-                <h3 class="footer-title">تسوق حسب الفئة</h3>
-                <ul class="footer-links">
-                    {% for category in store.categories|slice(0, 6) %}
-                        <li><a href="{{ category.url }}">{{ category.name }}</a></li>
-                    {% endfor %}
-                </ul>
-            </div>
-
-            <!-- Newsletter & Social -->
-            <div class="footer-section">
-                <h3 class="footer-title">تابعنا</h3>
-                <div class="footer-newsletter">
-                    <p>اشترك في نشرتنا البريدية لتحصل على آخر العروض</p>
-                    <div class="newsletter-form">
-                        <salla-newsletter-subscription placeholder="بريدك الإلكتروني"></salla-newsletter-subscription>
-                    </div>
-                </div>
-                
-                <div class="social-links">
-                    {% if store.social.facebook %}
-                        <a href="{{ store.social.facebook }}" target="_blank" class="social-link facebook">
-                            <i class="icon-facebook"></i>
-                        </a>
-                    {% endif %}
-                    {% if store.social.twitter %}
-                        <a href="{{ store.social.twitter }}" target="_blank" class="social-link twitter">
-                            <i class="icon-twitter"></i>
-                        </a>
-                    {% endif %}
-                    {% if store.social.instagram %}
-                        <a href="{{ store.social.instagram }}" target="_blank" class="social-link instagram">
-                            <i class="icon-instagram"></i>
-                        </a>
-                    {% endif %}
-                    {% if store.social.youtube %}
-                        <a href="{{ store.social.youtube }}" target="_blank" class="social-link youtube">
-                            <i class="icon-youtube"></i>
-                        </a>
-                    {% endif %}
-                    {% if store.social.linkedin %}
-                        <a href="{{ store.social.linkedin }}" target="_blank" class="social-link linkedin">
-                            <i class="icon-linkedin"></i>
-                        </a>
-                    {% endif %}
-                    {% if store.social.snapchat %}
-                        <a href="{{ store.social.snapchat }}" target="_blank" class="social-link snapchat">
-                            <i class="icon-snapchat"></i>
-                        </a>
-                    {% endif %}
-                    {% if store.social.tiktok %}
-                        <a href="{{ store.social.tiktok }}" target="_blank" class="social-link tiktok">
-                            <i class="icon-tiktok"></i>
-                        </a>
-                    {% endif %}
-                </div>
-
-                <!-- App Download -->
-                <div class="app-download">
-                    <p>حمل تطبيقنا</p>
-                    <div class="app-links">
-                        {% if store.apps.ios %}
-                            <a href="{{ store.apps.ios }}" target="_blank" class="app-link">
-                                <img src="{{ 'assets/images/app-store.png' | asset }}" alt="Download on App Store">
-                            </a>
-                        {% endif %}
-                        {% if store.apps.android %}
-                            <a href="{{ store.apps.android }}" target="_blank" class="app-link">
-                                <img src="{{ 'assets/images/google-play.png' | asset }}" alt="Get it on Google Play">
-                            </a>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Payment Methods & Certifications -->
-<div class="footer-bottom-info">
-    <div class="container">
-        <div class="bottom-info-content">
-            <!-- Payment Methods -->
-            <div class="payment-methods">
-                <h4>طرق الدفع المتاحة</h4>
-                <div class="payment-icons">
-                    <img src="{{ 'assets/images/payment/visa.png' | asset }}" alt="Visa" class="payment-icon">
-                    <img src="{{ 'assets/images/payment/mastercard.png' | asset }}" alt="Mastercard" class="payment-icon">
-                    <img src="{{ 'assets/images/payment/mada.png' | asset }}" alt="Mada" class="payment-icon">
-                    <img src="{{ 'assets/images/payment/apple-pay.png' | asset }}" alt="Apple Pay" class="payment-icon">
-                    <img src="{{ 'assets/images/payment/stc-pay.png' | asset }}" alt="STC Pay" class="payment-icon">
-                </div>
-            </div>
-
-            <!-- Shipping Partners -->
-            <div class="shipping-partners">
-                <h4>شركاء الشحن</h4>
-                <div class="shipping-icons">
-                    <img src="{{ 'assets/images/shipping/aramex.png' | asset }}" alt="Aramex" class="shipping-icon">
-                    <img src="{{ 'assets/images/shipping/smsa.png' | asset }}" alt="SMSA" class="shipping-icon">
-                    <img src="{{ 'assets/images/shipping/dhl.png' | asset }}" alt="DHL" class="shipping-icon">
-                    <img src="{{ 'assets/images/shipping/fastlo.png' | asset }}" alt="Fastlo" class="shipping-icon">
-                </div>
-            </div>
-
-            <!-- Certifications -->
-            <div class="certifications">
-                <h4>الشهادات والتراخيص</h4>
-                <div class="cert-icons">
-                    <img src="{{ 'assets/images/cert/ssl.png' | asset }}" alt="SSL Certificate" class="cert-icon">
-                    <img src="{{ 'assets/images/cert/commerce.png' | asset }}" alt="Ministry of Commerce" class="cert-icon">
-                    <img src="{{ 'assets/images/cert/maroof.png' | asset }}" alt="Maroof" class="cert-icon">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Footer Bottom -->
-<div class="footer-bottom">
-    <div class="container">
-        <div class="footer-bottom-content">
-            <div class="copyright">
-                <p>&copy; {{ "now"|date("Y") }} {{ store.name }}. جميع الحقوق محفوظة.</p>
             </div>
             
-            <div class="footer-legal">
-                <a href="{{ url('terms') }}">الشروط والأحكام</a>
-                <span class="separator">|</span>
-                <a href="{{ url('privacy') }}">سياسة الخصوصية</a>
-                <span class="separator">|</span>
-                <a href="{{ url('cookies') }}">سياسة ملفات تعريف الارتباط</a>
+            <div class="footer-section">
+                <h3>خدمة العملاء</h3>
+                <ul>
+                    <li><a href="{{ url('about') }}">من نحن</a></li>
+                    <li><a href="{{ url('contact') }}">اتصل بنا</a></li>
+                    <li><a href="{{ url('faq') }}">الأسئلة الشائعة</a></li>
+                    <li><a href="{{ url('shipping') }}">سياسة الشحن</a></li>
+                </ul>
             </div>
-
-            <div class="powered-by">
-                <p>
-                    مدعوم بـ 
-                    <a href="https://salla.sa" target="_blank" rel="noopener">
-                        <img src="{{ 'assets/images/salla-logo.png' | asset }}" alt="Salla" class="salla-logo">
-                    </a>
-                </p>
+            
+            <div class="footer-section">
+                <h3>معلومات التواصل</h3>
+                {% if store.phone %}
+                    <p><i class="sicon-phone"></i> {{ store.phone }}</p>
+                {% endif %}
+                {% if store.email %}
+                    <p><i class="sicon-mail"></i> {{ store.email }}</p>
+                {% endif %}
+                <p><i class="sicon-location"></i> المملكة العربية السعودية</p>
             </div>
         </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; {{ "now"|date("Y") }} {{ store.name }}. جميع الحقوق محفوظة.</p>
+        </div>
     </div>
-</div>
+</footer>

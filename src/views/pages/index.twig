@@ -112,25 +112,45 @@
             <p class="section-description">اكتشف مجموعتنا المتنوعة من المنتجات</p>
         </div>
         <div class="categories-grid">
-            {% for category in store.categories|slice(0, 6) %}
-                <div class="category-card">
-                    <a href="{{ category.url }}" class="category-link">
-                        <div class="category-image">
-                            {% if category.image %}
-                                <img src="{{ category.image }}" alt="{{ category.name }}" loading="lazy">
-                            {% else %}
-                                <div class="category-placeholder">
-                                    <i class="sicon-folder"></i>
-                                </div>
-                            {% endif %}
-                            <div class="category-overlay">
-                                <span class="category-name">{{ category.name }}</span>
-                                <span class="category-count">({{ category.products_count }} منتج)</span>
-                            </div>
+            <div class="category-card">
+                <a href="#" class="category-link">
+                    <div class="category-image">
+                        <div class="category-placeholder">
+                            <i class="sicon-folder"></i>
                         </div>
-                    </a>
-                </div>
-            {% endfor %}
+                        <div class="category-overlay">
+                            <span class="category-name">الإلكترونيات</span>
+                            <span class="category-count">(25 منتج)</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="category-card">
+                <a href="#" class="category-link">
+                    <div class="category-image">
+                        <div class="category-placeholder">
+                            <i class="sicon-folder"></i>
+                        </div>
+                        <div class="category-overlay">
+                            <span class="category-name">الملابس</span>
+                            <span class="category-count">(40 منتج)</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="category-card">
+                <a href="#" class="category-link">
+                    <div class="category-image">
+                        <div class="category-placeholder">
+                            <i class="sicon-folder"></i>
+                        </div>
+                        <div class="category-overlay">
+                            <span class="category-name">المنزل والحديقة</span>
+                            <span class="category-count">(30 منتج)</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </section>
@@ -142,13 +162,9 @@
             <h2 class="section-title">المنتجات المميزة</h2>
             <p class="section-description">أفضل ما لدينا من منتجات مختارة بعناية</p>
         </div>
-        <salla-products-slider 
-            source="featured" 
-            display-mode="grid"
-            block-title=""
-            products-per-row="4"
-            auto-play="true">
-        </salla-products-slider>
+        <div class="products-placeholder">
+            <p>سيتم عرض المنتجات المميزة هنا</p>
+        </div>
     </div>
 </section>
 
@@ -160,7 +176,7 @@
                 <div class="sale-text">
                     <h2>عروض نهاية الموسم</h2>
                     <p>خصومات تصل إلى 70% على مجموعة مختارة من المنتجات</p>
-                    <a href="{{ url('offers') }}" class="sale-btn btn btn-light">
+                    <a href="#" class="sale-btn btn btn-light">
                         تسوق الآن
                     </a>
                 </div>
@@ -171,23 +187,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- Latest Products Section -->
-<section class="latest-products-section">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">أحدث المنتجات</h2>
-            <p class="section-description">آخر ما وصل إلى متجرنا</p>
-        </div>
-        <salla-products-slider 
-            source="latest" 
-            display-mode="grid"
-            block-title=""
-            products-per-row="4"
-            auto-play="true">
-        </salla-products-slider>
     </div>
 </section>
 
@@ -252,7 +251,9 @@
                 <p>احصل على آخر العروض والمنتجات الجديدة</p>
             </div>
             <div class="newsletter-form">
-                <salla-newsletter-subscription placeholder="أدخل بريدك الإلكتروني"></salla-newsletter-subscription>
+                <div class="newsletter-placeholder">
+                    <p>سيتم عرض نموذج الاشتراك هنا</p>
+                </div>
             </div>
         </div>
     </div>

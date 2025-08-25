@@ -1,0 +1,19 @@
+<!-- Breadcrumb -->
+<nav class="breadcrumb-nav">
+    <ul class="breadcrumb-list">
+        <li class="breadcrumb-item">
+            <a href="{{ url('home') }}">الرئيسية</a>
+        </li>
+        {% if breadcrumb %}
+            {% for item in breadcrumb %}
+                <li class="breadcrumb-item">
+                    {% if loop.last %}
+                        <span>{{ item.title }}</span>
+                    {% else %}
+                        <a href="{{ item.url }}">{{ item.title }}</a>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+</nav>
