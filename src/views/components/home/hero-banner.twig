@@ -1,0 +1,111 @@
+{# Hero Banner Component #}
+<section class="hero-banner relative overflow-hidden bg-gradient-to-r from-primary-600 to-secondary-600 text-white">
+    {# Background Image #}
+    {% if component.hero_background %}
+        <div class="absolute inset-0">
+            <img src="{{ component.hero_background }}" 
+                 alt="Hero Background" 
+                 class="w-full h-full object-cover opacity-20">
+        </div>
+    {% endif %}
+    
+    {# Content Overlay #}
+    <div class="relative z-10 container mx-auto px-4 py-20 lg:py-32">
+        <div class="max-w-4xl mx-auto text-center">
+            {# Main Title #}
+            {% if component.hero_title %}
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in-up">
+                    {{ component.hero_title }}
+                </h1>
+            {% endif %}
+            
+            {# Description #}
+            {% if component.hero_description %}
+                <p class="text-lg md:text-xl lg:text-2xl mb-8 text-white/90 max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-200">
+                    {{ component.hero_description }}
+                </p>
+            {% endif %}
+            
+            {# CTA Button #}
+            {% if component.hero_button_url and component.hero_button_text %}
+                <a href="{{ component.hero_button_url }}" 
+                   class="inline-block bg-white text-primary-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl animate-fade-in-up animation-delay-400">
+                    {{ component.hero_button_text }}
+                </a>
+            {% endif %}
+        </div>
+    </div>
+    
+    {# Decorative Elements #}
+    <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black/10 to-transparent"></div>
+    
+    {# Floating Shapes #}
+    <div class="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full animate-float"></div>
+    <div class="absolute top-40 right-20 w-16 h-16 bg-white/20 rounded-full animate-float animation-delay-1000"></div>
+    <div class="absolute bottom-40 left-20 w-12 h-12 bg-white/15 rounded-full animate-float animation-delay-2000"></div>
+</section>
+
+<style>
+.hero-banner {
+    --primary-600: {{ theme.settings.primary_color|default('#2563eb') }};
+    --secondary-600: {{ theme.settings.secondary_color|default('#7c3aed') }};
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animation-delay-200 {
+    animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+    animation-delay: 0.4s;
+}
+
+.animation-delay-1000 {
+    animation-delay: 1s;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+    .hero-banner {
+        padding: 4rem 1rem;
+    }
+    
+    .hero-banner h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-banner p {
+        font-size: 1.125rem;
+    }
+}
+</style>

@@ -1,0 +1,113 @@
+{# Categories Showcase Component #}
+<section class="categories-showcase py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+        {# Section Header #}
+        {% if component.categories_title or component.categories_description %}
+            <div class="text-center mb-12">
+                {% if component.categories_title %}
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                        {{ component.categories_title }}
+                    </h2>
+                {% endif %}
+                
+                {% if component.categories_description %}
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        {{ component.categories_description }}
+                    </p>
+                {% endif %}
+            </div>
+        {% endif %}
+        
+        {# Categories Grid #}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% set categories_count = component.categories_count|default(6) %}
+            {% for category in store.categories|slice(0, categories_count) %}
+                <div class="category-card group cursor-pointer transform hover:scale-105 transition-all duration-300">
+                    <div class="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl">
+                        {# Category Image #}
+                        <div class="aspect-w-16 aspect-h-9 bg-gradient-to-br from-primary-500 to-secondary-500">
+                            {% if category.image %}
+                                <img src="{{ category.image }}" 
+                                     alt="{{ category.name }}" 
+                                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            {% else %}
+                                <div class="w-full h-full flex items-center justify-center">
+                                    <i class="sicon-folder text-6xl text-white/80"></i>
+                                </div>
+                            {% endif %}
+                        </div>
+                        
+                        {# Category Overlay #}
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                <h3 class="text-xl font-bold mb-2">{{ category.name }}</h3>
+                                <p class="text-sm text-white/90 mb-3">
+                                    {{ category.products_count|default(0) }} منتج
+                                </p>
+                                <span class="inline-flex items-center text-sm font-medium">
+                                    تصفح الفئة
+                                    <i class="sicon-arrow-left mr-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                                </span>
+                            </div>
+                        </div>
+                        
+                        {# Category Badge #}
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-white/90 text-gray-900 px-3 py-1 rounded-full text-sm font-medium">
+                                {{ category.name|slice(0, 15) }}{% if category.name|length > 15 %}...{% endif %}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        
+        {# View All Categories Button #}
+        <div class="text-center mt-12">
+            <a href="{{ url('categories') }}" 
+               class="inline-flex items-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-full hover:bg-primary-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                عرض جميع الفئات
+                <i class="sicon-arrow-left mr-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+.categories-showcase {
+    --primary-500: {{ theme.settings.primary_color|default('#2563eb') }};
+    --secondary-500: {{ theme.settings.secondary_color|default('#7c3aed') }};
+}
+
+.category-card {
+    position: relative;
+}
+
+.category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, var(--primary-500), var(--secondary-500));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 1rem;
+    z-index: -1;
+}
+
+.category-card:hover::before {
+    opacity: 0.1;
+}
+
+@media (max-width: 768px) {
+    .categories-showcase {
+        padding: 3rem 1rem;
+    }
+    
+    .categories-showcase h2 {
+        font-size: 2rem;
+    }
+}
+</style>

@@ -1,0 +1,455 @@
+{
+    "name": {
+        "ar": "نور",
+        "en": "Noor Store Theme"
+    },
+    "repository": "https://github.com/username/noor-store-theme",
+    "author_email": "support@noorstore.com",
+    "features": [
+        "mega-menu",
+        "fonts",
+        "color",
+        "breadcrumb",
+        "unite-cards-height",
+        "component-featured-products",
+        "component-fixed-banner",
+        "component-fixed-products",
+        "component-products-slider",
+        "component-photos-slider",
+        "component-parallax-background",
+        "component-testimonials",
+        "component-square-photos",
+        "component-store-features",
+        "component-youtube",
+        "menu-images",
+        "filters",
+        "component-hero-banner",
+        "component-categories-showcase",
+        "component-newsletter-signup",
+        "component-social-proof",
+        "component-announcement-bar"
+    ],
+    "settings": [
+        {
+            "type": "static",
+            "format": "title",
+            "id": "theme_info",
+            "value": "معلومات الثيم",
+            "variant": "h4"
+        },
+        {
+            "type": "string",
+            "icon": "sicon-palette",
+            "label": "اللون الأساسي",
+            "description": "اللون الرئيسي للثيم",
+            "id": "primary_color",
+            "format": "color",
+            "required": false,
+            "value": "#2563eb"
+        },
+        {
+            "type": "string",
+            "icon": "sicon-palette",
+            "label": "اللون الثانوي",
+            "description": "اللون الثانوي للثيم",
+            "id": "secondary_color",
+            "format": "color",
+            "required": false,
+            "value": "#7c3aed"
+        },
+        {
+            "type": "string",
+            "icon": "sicon-palette",
+            "label": "لون التمييز",
+            "description": "لون التمييز والتنبيهات",
+            "id": "accent_color",
+            "format": "color",
+            "required": false,
+            "value": "#f59e0b"
+        },
+        {
+            "type": "static",
+            "format": "line",
+            "id": "separator1"
+        },
+        {
+            "type": "static",
+            "format": "title",
+            "id": "header_settings",
+            "value": "إعدادات الهيدر",
+            "variant": "h5"
+        },
+        {
+            "id": "header_is_sticky",
+            "label": "تثبت القائمة الرئيسية أعلى الصفحة عند التمرير لأسفل",
+            "description": "يُنصح بالغاء تفعيلها في حالة وجود عناصر كثيرة في القائمة المنسدلة",
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        },
+        {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": "شريط علوي داكن",
+            "description": "تفعيل الوضع الداكن للشريط العلوي",
+            "id": "topnav_is_dark",
+            "format": "switch",
+            "required": false,
+            "value": false,
+            "selected": false
+        },
+        {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": "عرض روابط الصفحات الهامة في الشريط العلوي",
+            "description": "مثل صفحة الهبوط ، المدونة ،الصفحات التعريفية",
+            "id": "important_links",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        },
+        {
+            "type": "static",
+            "format": "line",
+            "id": "separator2"
+        },
+        {
+            "type": "static",
+            "format": "title",
+            "id": "footer_settings",
+            "value": "إعدادات الفوتر",
+            "variant": "h5"
+        },
+        {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": "الوضع الداكن للفوتر",
+            "description": "تفعيل الوضع الداكن للفوتر",
+            "id": "footer_is_dark",
+            "format": "switch",
+            "required": false,
+            "value": false,
+            "selected": false
+        },
+        {
+            "type": "static",
+            "format": "line",
+            "id": "separator3"
+        },
+        {
+            "type": "static",
+            "format": "title",
+            "id": "product_settings",
+            "value": "إعدادات المنتجات",
+            "variant": "h5"
+        },
+        {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": "تثبيت زر الإضافة والكمية أسفل شاشة الجوال",
+            "description": "تفعيل زر الإضافة الثابت على الجوال",
+            "id": "sticky_add_to_cart",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        },
+        {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": "اظهار الوسوم",
+            "description": "عرض وسوم المنتجات",
+            "id": "show_tags",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        },
+        {
+            "type": "number",
+            "icon": "sicon-layout-grid",
+            "label": "عدد المنتجات في الصف",
+            "description": "عدد المنتجات المعروضة في كل صف",
+            "id": "products_per_row",
+            "format": "select",
+            "required": false,
+            "value": 4,
+            "options": [
+                {"label": "3 منتجات", "value": 3},
+                {"label": "4 منتجات", "value": 4},
+                {"label": "5 منتجات", "value": 5},
+                {"label": "6 منتجات", "value": 6}
+            ]
+        },
+        {
+            "type": "static",
+            "format": "line",
+            "id": "separator4"
+        },
+        {
+            "type": "static",
+            "format": "title",
+            "id": "animation_settings",
+            "value": "إعدادات الحركة",
+            "variant": "h5"
+        },
+        {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": "تفعيل التأثيرات الحركية",
+            "description": "تفعيل التأثيرات الحركية والانتقالات",
+            "id": "enable_animations",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        },
+        {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": "تفعيل التحميل الكسول للصور",
+            "description": "تحسين سرعة تحميل الصفحة",
+            "id": "enable_lazy_loading",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        }
+    ],
+    "components": [
+        {
+            "key": "hero-banner-component",
+            "title": "بنر ترحيبي مميز",
+            "icon": "sicon-star",
+            "path": "home.hero-banner",
+            "image": "https://cdn.salla.sa/mQgZlG/hero-banner-preview.png",
+            "is_default": true,
+            "fields": [
+                {
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "العنوان الرئيسي",
+                    "multilanguage": true,
+                    "id": "hero_title",
+                    "value": "أهلاً وسهلاً بكم في متجر نور",
+                    "required": true,
+                    "format": "text",
+                    "placeholder": "أدخل العنوان الرئيسي"
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-typography",
+                    "label": "الوصف",
+                    "multilanguage": true,
+                    "id": "hero_description",
+                    "value": "اكتشف مجموعتنا المتنوعة من المنتجات عالية الجودة بأفضل الأسعار",
+                    "required": false,
+                    "format": "textarea",
+                    "placeholder": "أدخل الوصف"
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-image",
+                    "label": "صورة الخلفية",
+                    "id": "hero_background",
+                    "value": "",
+                    "required": true,
+                    "format": "image",
+                    "description": "صورة خلفية للبنر"
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-link",
+                    "label": "رابط الزر",
+                    "id": "hero_button_url",
+                    "value": "",
+                    "required": false,
+                    "format": "url",
+                    "placeholder": "أدخل رابط الزر"
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "نص الزر",
+                    "multilanguage": true,
+                    "id": "hero_button_text",
+                    "value": "تسوق الآن",
+                    "required": false,
+                    "format": "text",
+                    "placeholder": "أدخل نص الزر"
+                }
+            ]
+        },
+        {
+            "key": "categories-showcase-component",
+            "title": "عرض الفئات",
+            "icon": "sicon-folder",
+            "path": "home.categories-showcase",
+            "image": "https://cdn.salla.sa/mQgZlG/categories-preview.png",
+            "is_default": true,
+            "fields": [
+                {
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "العنوان",
+                    "multilanguage": true,
+                    "id": "categories_title",
+                    "value": "تسوق حسب الفئة",
+                    "required": false,
+                    "format": "text"
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-typography",
+                    "label": "الوصف",
+                    "multilanguage": true,
+                    "id": "categories_description",
+                    "value": "اكتشف مجموعتنا المتنوعة من المنتجات",
+                    "required": false,
+                    "format": "textarea"
+                },
+                {
+                    "type": "number",
+                    "icon": "sicon-layout-grid",
+                    "label": "عدد الفئات",
+                    "id": "categories_count",
+                    "value": 6,
+                    "required": false,
+                    "format": "select",
+                    "options": [
+                        {"label": "3 فئات", "value": 3},
+                        {"label": "6 فئات", "value": 6},
+                        {"label": "9 فئات", "value": 9}
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "newsletter-signup-component",
+            "title": "النشرة البريدية",
+            "icon": "sicon-mail",
+            "path": "home.newsletter-signup",
+            "image": "https://cdn.salla.sa/mQgZlG/newsletter-preview.png",
+            "is_default": true,
+            "fields": [
+                {
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "العنوان",
+                    "multilanguage": true,
+                    "id": "newsletter_title",
+                    "value": "اشترك في نشرتنا البريدية",
+                    "required": false,
+                    "format": "text"
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-typography",
+                    "label": "الوصف",
+                    "multilanguage": true,
+                    "id": "newsletter_description",
+                    "value": "احصل على آخر العروض والمنتجات الجديدة",
+                    "required": false,
+                    "format": "textarea"
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-palette",
+                    "label": "لون الخلفية",
+                    "id": "newsletter_bg_color",
+                    "value": "#2563eb",
+                    "required": false,
+                    "format": "color"
+                }
+            ]
+        },
+        {
+            "key": "social-proof-component",
+            "title": "إثبات اجتماعي",
+            "icon": "sicon-users",
+            "path": "home.social-proof",
+            "image": "https://cdn.salla.sa/mQgZlG/social-proof-preview.png",
+            "is_default": true,
+            "fields": [
+                {
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "العنوان",
+                    "multilanguage": true,
+                    "id": "social_proof_title",
+                    "value": "لماذا يختارون متجر نور؟",
+                    "required": false,
+                    "format": "text"
+                },
+                {
+                    "id": "proof_items",
+                    "type": "collection",
+                    "format": "collection",
+                    "required": true,
+                    "minLength": 3,
+                    "maxLength": 6,
+                    "item_label": "ميزة",
+                    "value": [
+                        {
+                            "icon": "sicon-shipping",
+                            "title": "شحن مجاني",
+                            "description": "للطلبات أكثر من 200 ريال"
+                        },
+                        {
+                            "icon": "sicon-return",
+                            "title": "إرجاع مجاني",
+                            "description": "خلال 14 يوم من الشراء"
+                        },
+                        {
+                            "icon": "sicon-support",
+                            "title": "دعم فني 24/7",
+                            "description": "نحن هنا لمساعدتك دائماً"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "label": "أيقونة الميزة",
+                            "id": "icon",
+                            "value": "sicon-star",
+                            "required": false,
+                            "format": "icon"
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "label": "عنوان الميزة",
+                            "multilanguage": true,
+                            "id": "title",
+                            "value": null,
+                            "required": true,
+                            "format": "text",
+                            "placeholder": "أدخل عنوان الميزة"
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-typography",
+                            "label": "وصف الميزة",
+                            "multilanguage": true,
+                            "id": "description",
+                            "value": null,
+                            "required": false,
+                            "format": "textarea",
+                            "placeholder": "أدخل وصف الميزة"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "support_url": "https://noorstore.com/support",
+    "description": {
+        "ar": "ثيم نور - ثيم أنيق ومتطور للمتاجر الإلكترونية مع تصميم عصري ومميزات متقدمة",
+        "en": "Noor Store Theme - Elegant and advanced theme for e-commerce stores with modern design and advanced features"
+    }
+}

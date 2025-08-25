@@ -1,0 +1,35 @@
+{#
+| Variable         | Type       | Description                                                         |
+|------------------|------------|---------------------------------------------------------------------|
+| page             | object     |                                                                     |
+| page.title       | string     | *could be html                                                      |
+| page.slug        | string     | ex: "cat.show"                                                      |
+#}
+{% extends "layouts.master" %}
+
+{% block content %}
+    {# Hero Banner Component #}
+    {% component home.hero-banner %}
+    
+    {# Categories Showcase Component #}
+    {% component home.categories-showcase %}
+    
+    {# Featured Products Component #}
+    {% component home.featured-products-style1 %}
+    
+    {# Social Proof Component #}
+    {% component home.social-proof %}
+    
+    {# Newsletter Signup Component #}
+    {% component home.newsletter-signup %}
+    
+    {# Store Features Component #}
+    {% component home.store-features %}
+    
+    {# Testimonials Component #}
+    {% component home.testimonials %}
+{% endblock %}
+
+{% block scripts %}
+    <script defer src="{{ 'home.js' | asset }}"></script>
+{% endblock %}
