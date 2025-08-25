@@ -4,18 +4,10 @@
   "description": "ثيم نور - ثيم أنيق ومتطور للمتاجر الالكترونية على منصة سلة",
   "main": "index.js",
   "scripts": {
-    "dev": "salla themprevew",
-    "build": "npm run build-css && npm run build-js",
-    "build-css": "postcss assets/css/app.css -o dist/css/app.min.css --watch",
-    "build-js": "webpack --mode=dvelopt --watch",
-    "build-prod": "npm run build-css-prod && npm run build-js-prod",
-    "build-css-prod": "postcss assets/css/app.css -o dist/css/app.min.css --env production",
-    "build-js-prod": "webpack --mode=production",
-    "lint": "eslint assets/js/**/*.js",
-    "format": "prettier --write \"**/*.{js,css,json,md}\"",
-    "publish": "salla theme publish",
+    "dev": "salla theme preview",
+    "build": "echo 'Theme is ready to use'",
     "preview": "salla theme preview",
-    "deploy": "npm run build-prod && npm run publish"
+    "publish": "salla theme publish"
   },
   "keywords": [
     "salla",
@@ -43,36 +35,15 @@
   "dependencies": {
     "@salla.sa/twilight-components": "^2.14.0"
   },
-  "devDependencies": {
-    "autoprefixer": "^10.4.16",
-    "cssnano": "^6.0.1",
-    "eslint": "^8.52.0",
-    "postcss": "^8.4.31",
-    "postcss-cli": "^10.1.0",
-    "postcss-import": "^15.1.0",
-    "postcss-nested": "^6.0.1",
-    "prettier": "^3.0.3",
-    "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4"
-  },
   "engines": {
     "node": ">=16.0.0",
     "npm": ">=8.0.0"
   },
-  "browserslist": [
-    "last 2 versions",
-    "> 1%",
-    "not dead"
-  ],
   "salla": {
     "theme": {
       "name": "Noor Store",
       "version": "1.0.0",
-      "api_version": "2.0",
-      "preview": {
-        "desktop": "assets/images/preview-desktop.jpg",
-        "mobile": "assets/images/preview-mobile.jpg"
-      }
+      "api_version": "2.0"
     }
   }
 }

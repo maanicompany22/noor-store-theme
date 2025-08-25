@@ -554,6 +554,46 @@ a:hover {
    Additional Home Page Components Styles
    ======================================== */
 
+/* Hero Section */
+.hero-section {
+  padding: var(--spacing-2xl) 0;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--spacing-lg);
+  color: white;
+}
+
+.hero-description {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-xl);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-btn {
+  background: white;
+  color: var(--primary-color);
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.hero-btn:hover {
+  background: var(--bg-secondary);
+  transform: translateY(-2px);
+}
+
 /* Quick Links Section */
 .quick-links-section {
   padding: var(--spacing-2xl) 0;
@@ -716,6 +756,17 @@ a:hover {
   transition: var(--transition);
 }
 
+.category-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: var(--text-muted);
+}
+
 .category-card:hover .category-image img {
   transform: scale(1.1);
 }
@@ -807,10 +858,15 @@ a:hover {
   overflow: hidden;
 }
 
-.sale-image img {
+.sale-placeholder {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  background: var(--bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: var(--text-muted);
 }
 
 /* Square Banners Section */
@@ -877,8 +933,11 @@ a:hover {
   background: var(--bg-primary);
 }
 
-.testimonials-slider {
-  max-width: 800px;
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--spacing-xl);
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -914,14 +973,13 @@ a:hover {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  overflow: hidden;
+  background: var(--bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 3px solid var(--primary-color);
-}
-
-.author-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  font-size: 1.5rem;
+  color: var(--text-muted);
 }
 
 .author-info h4 {
