@@ -4,10 +4,10 @@
   "description": "ثيم نور - ثيم أنيق ومتطور للمتاجر الالكترونية على منصة سلة",
   "main": "index.js",
   "scripts": {
-    "dev": "salla theme preview",
+    "dev": "salla themprevew",
     "build": "npm run build-css && npm run build-js",
     "build-css": "postcss assets/css/app.css -o dist/css/app.min.css --watch",
-    "build-js": "webpack --mode=development --watch",
+    "build-js": "webpack --mode=dvelopt --watch",
     "build-prod": "npm run build-css-prod && npm run build-js-prod",
     "build-css-prod": "postcss assets/css/app.css -o dist/css/app.min.css --env production",
     "build-js-prod": "webpack --mode=production",
