@@ -5,6 +5,8 @@
     },
     "version": "2.0.0",
     "version_id": "noor-store-theme-v2",
+    "theme_id": "noor-store-theme",
+    "platform_version": "2.14.199",
     "repository": "https://github.com/username/noor-store-theme",
     "author_email": "support@noorstore.com",
     "features": [
@@ -232,6 +234,8 @@
             "image": "https://cdn.salla.sa/mQgZlG/hero-banner-preview.png",
             "version": "1.0.0",
             "version_id": "hero-banner-v1-001",
+            "component_version": "1.0.0",
+            "component_hash": "hero-banner-v1-001-hash",
             "last_updated": "2024-01-01",
             "is_default": true,
             "fields": [
@@ -299,6 +303,8 @@
             "image": "https://cdn.salla.sa/mQgZlG/categories-preview.png",
             "version": "1.0.0",
             "version_id": "categories-showcase-v1-001",
+            "component_version": "1.0.0",
+            "component_hash": "categories-showcase-v1-001-hash",
             "last_updated": "2024-01-01",
             "is_default": true,
             "fields": [
@@ -347,6 +353,8 @@
             "image": "https://cdn.salla.sa/mQgZlG/newsletter-preview.png",
             "version": "1.0.0",
             "version_id": "newsletter-signup-v1-001",
+            "component_version": "1.0.0",
+            "component_hash": "newsletter-signup-v1-001-hash",
             "last_updated": "2024-01-01",
             "is_default": true,
             "fields": [
@@ -390,6 +398,8 @@
             "image": "https://cdn.salla.sa/mQgZlG/social-proof-preview.png",
             "version": "1.0.0",
             "version_id": "social-proof-v1-001",
+            "component_version": "1.0.0",
+            "component_hash": "social-proof-v1-001-hash",
             "last_updated": "2024-01-01",
             "is_default": true,
             "fields": [

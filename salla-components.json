@@ -1,0 +1,92 @@
+{
+  "salla_platform": {
+    "version": "2.14.199",
+    "theme_id": "noor-store-theme",
+    "theme_version": "2.0.0",
+    "theme_version_id": "noor-store-theme-v2"
+  },
+  "component_registry": {
+    "hero-banner-component": {
+      "key": "hero-banner-component",
+      "component_id": "hero-banner-v1",
+      "version_id": "hero-banner-v1-001",
+      "component_version": "1.0.0",
+      "component_hash": "hero-banner-v1-001-hash",
+      "status": "active",
+      "path": "home.hero-banner",
+      "template": "src/views/components/home/hero-banner.twig",
+      "dependencies": [],
+      "required_fields": ["hero_title", "hero_background"],
+      "api_endpoint": "/admin/v2/design/component/custom_component",
+      "cache_key": "hero-banner-v1-001"
+    },
+    "categories-showcase-component": {
+      "key": "categories-showcase-component",
+      "component_id": "categories-showcase-v1",
+      "version_id": "categories-showcase-v1-001",
+      "component_version": "1.0.0",
+      "component_hash": "categories-showcase-v1-001-hash",
+      "status": "active",
+      "path": "home.categories-showcase",
+      "template": "src/views/components/home/categories-showcase.twig",
+      "dependencies": [],
+      "required_fields": ["categories_title"],
+      "api_endpoint": "/admin/v2/design/component/custom_component",
+      "cache_key": "categories-showcase-v1-001"
+    },
+    "social-proof-component": {
+      "key": "social-proof-component",
+      "component_id": "social-proof-v1",
+      "version_id": "social-proof-v1-001",
+      "component_version": "1.0.0",
+      "component_hash": "social-proof-v1-001-hash",
+      "status": "active",
+      "path": "home.social-proof",
+      "template": "src/views/components/home/social-proof.twig",
+      "dependencies": [],
+      "required_fields": ["proof_items"],
+      "api_endpoint": "/admin/v2/design/component/custom_component",
+      "cache_key": "social-proof-v1-001"
+    },
+    "newsletter-signup-component": {
+      "key": "newsletter-signup-component",
+      "component_id": "newsletter-signup-v1",
+      "version_id": "newsletter-signup-v1-001",
+      "component_version": "1.0.0",
+      "component_hash": "newsletter-signup-v1-001-hash",
+      "status": "active",
+      "path": "home.newsletter-signup",
+      "template": "src/views/components/home/newsletter-signup.twig",
+      "dependencies": [],
+      "required_fields": ["newsletter_title"],
+      "api_endpoint": "/admin/v2/design/component/custom_component",
+      "cache_key": "newsletter-signup-v1-001"
+    }
+  },
+  "api_configuration": {
+    "base_url": "https://api.salla.dev",
+    "endpoint": "/admin/v2/design/component/custom_component",
+    "required_params": ["key", "version_id"],
+    "optional_params": ["theme_id", "component_hash"],
+    "cache_duration": 3600,
+    "retry_attempts": 3,
+    "timeout": 30000
+  },
+  "error_handling": {
+    "fallback_enabled": true,
+    "error_logging": true,
+    "user_friendly_errors": true,
+    "retry_on_failure": true,
+    "component_degradation": true
+  },
+  "cache_strategy": {
+    "component_cache": true,
+    "template_cache": true,
+    "api_response_cache": true,
+    "cache_invalidation": "version_based",
+    "cache_headers": {
+      "Cache-Control": "public, max-age=3600",
+      "ETag": "version_based"
+    }
+  }
+}
