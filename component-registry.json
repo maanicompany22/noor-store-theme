@@ -1,0 +1,48 @@
+{
+  "theme_info": {
+    "name": "Noor Store Theme",
+    "version": "2.0.0",
+    "version_id": "noor-store-theme-v2",
+    "components_version": "1.0.0"
+  },
+  "components": {
+    "hero-banner-component": {
+      "component_id": "hero-banner-v1",
+      "version_id": "hero-banner-v1-001",
+      "status": "active",
+      "path": "home.hero-banner",
+      "dependencies": [],
+      "required_fields": ["hero_title", "hero_background"]
+    },
+    "categories-showcase-component": {
+      "component_id": "categories-showcase-v1",
+      "version_id": "categories-showcase-v1-001",
+      "status": "active",
+      "path": "home.categories-showcase",
+      "dependencies": [],
+      "required_fields": ["categories_title"]
+    },
+    "social-proof-component": {
+      "component_id": "social-proof-v1",
+      "version_id": "social-proof-v1-001",
+      "status": "active",
+      "path": "home.social-proof",
+      "dependencies": [],
+      "required_fields": ["proof_items"]
+    },
+    "newsletter-signup-component": {
+      "component_id": "newsletter-signup-v1",
+      "version_id": "newsletter-signup-v1-001",
+      "status": "active",
+      "path": "home.newsletter-signup",
+      "dependencies": [],
+      "required_fields": ["newsletter_title"]
+    }
+  },
+  "component_loading": {
+    "fallback_enabled": true,
+    "error_handling": true,
+    "retry_attempts": 3,
+    "cache_duration": 3600
+  }
+}

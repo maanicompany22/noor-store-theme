@@ -3,6 +3,8 @@
         "ar": "نور",
         "en": "Noor Store Theme"
     },
+    "version": "2.0.0",
+    "version_id": "noor-store-theme-v2",
     "repository": "https://github.com/username/noor-store-theme",
     "author_email": "support@noorstore.com",
     "features": [
@@ -223,11 +225,13 @@
     "components": [
         {
             "key": "hero-banner-component",
+            "component_id": "hero-banner-v1",
             "title": "بنر ترحيبي مميز",
             "icon": "sicon-star",
             "path": "home.hero-banner",
             "image": "https://cdn.salla.sa/mQgZlG/hero-banner-preview.png",
             "version": "1.0.0",
+            "version_id": "hero-banner-v1-001",
             "last_updated": "2024-01-01",
             "is_default": true,
             "fields": [
@@ -288,10 +292,14 @@
         },
         {
             "key": "categories-showcase-component",
+            "component_id": "categories-showcase-v1",
             "title": "عرض الفئات",
             "icon": "sicon-folder",
             "path": "home.categories-showcase",
             "image": "https://cdn.salla.sa/mQgZlG/categories-preview.png",
+            "version": "1.0.0",
+            "version_id": "categories-showcase-v1-001",
+            "last_updated": "2024-01-01",
             "is_default": true,
             "fields": [
                 {
@@ -332,10 +340,14 @@
         },
         {
             "key": "newsletter-signup-component",
+            "component_id": "newsletter-signup-v1",
             "title": "النشرة البريدية",
             "icon": "sicon-mail",
             "path": "home.newsletter-signup",
             "image": "https://cdn.salla.sa/mQgZlG/newsletter-preview.png",
+            "version": "1.0.0",
+            "version_id": "newsletter-signup-v1-001",
+            "last_updated": "2024-01-01",
             "is_default": true,
             "fields": [
                 {
@@ -371,11 +383,13 @@
         },
         {
             "key": "social-proof-component",
+            "component_id": "social-proof-v1",
             "title": "إثبات اجتماعي",
             "icon": "sicon-users",
             "path": "home.social-proof",
             "image": "https://cdn.salla.sa/mQgZlG/social-proof-preview.png",
             "version": "1.0.0",
+            "version_id": "social-proof-v1-001",
             "last_updated": "2024-01-01",
             "is_default": true,
             "fields": [
