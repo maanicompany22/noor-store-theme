@@ -227,6 +227,8 @@
             "icon": "sicon-star",
             "path": "home.hero-banner",
             "image": "https://cdn.salla.sa/mQgZlG/hero-banner-preview.png",
+            "version": "1.0.0",
+            "last_updated": "2024-01-01",
             "is_default": true,
             "fields": [
                 {
@@ -373,6 +375,8 @@
             "icon": "sicon-users",
             "path": "home.social-proof",
             "image": "https://cdn.salla.sa/mQgZlG/social-proof-preview.png",
+            "version": "1.0.0",
+            "last_updated": "2024-01-01",
             "is_default": true,
             "fields": [
                 {
