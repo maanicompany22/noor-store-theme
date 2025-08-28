@@ -1,14 +1,14 @@
 {
     "name": {
         "ar": "نور",
-        "en": "Noor Store Theme"
+        "en": "Noor Store"
     },
     "version": "2.0.0",
     "version_id": "noor-store-theme-v2",
     "theme_id": "noor-store-theme",
     "platform_version": "2.14.199",
-    "repository": "https://github.com/username/noor-store-theme",
-    "author_email": "support@noorstore.com",
+    "repository": "https://github.com/maanicompany22/noor-store-theme",
+    "author_email": "info@maaniagency.com",
     "features": [
         "mega-menu",
         "fonts",
@@ -183,10 +183,22 @@
             "required": false,
             "value": 4,
             "options": [
-                {"label": "3 منتجات", "value": 3},
-                {"label": "4 منتجات", "value": 4},
-                {"label": "5 منتجات", "value": 5},
-                {"label": "6 منتجات", "value": 6}
+                {
+                    "label": "3 منتجات",
+                    "value": 3
+                },
+                {
+                    "label": "4 منتجات",
+                    "value": 4
+                },
+                {
+                    "label": "5 منتجات",
+                    "value": 5
+                },
+                {
+                    "label": "6 منتجات",
+                    "value": 6
+                }
             ]
         },
         {
@@ -337,9 +349,18 @@
                     "required": false,
                     "format": "select",
                     "options": [
-                        {"label": "3 فئات", "value": 3},
-                        {"label": "6 فئات", "value": 6},
-                        {"label": "9 فئات", "value": 9}
+                        {
+                            "label": "3 فئات",
+                            "value": 3
+                        },
+                        {
+                            "label": "6 فئات",
+                            "value": 6
+                        },
+                        {
+                            "label": "9 فئات",
+                            "value": 9
+                        }
                     ]
                 }
             ]
@@ -475,9 +496,9 @@
             ]
         }
     ],
-    "support_url": "https://noorstore.com/support",
+    "support_url": "https://salla.com/",
     "description": {
-        "ar": "ثيم نور - ثيم أنيق ومتطور للمتاجر الإلكترونية مع تصميم عصري ومميزات متقدمة",
-        "en": "Noor Store Theme - Elegant and advanced theme for e-commerce stores with modern design and advanced features"
+        "ar": "ثيم نور - ثيم أنيق ومتطور للمتاجر الالكترونية مع مجموعة كبيرة من المزايا",
+        "en": "Noor Store - Modern and elegant theme for e-commerce stores with a wide range of features"
     }
 }
