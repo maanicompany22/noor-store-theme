@@ -23,5 +23,16 @@
   "common": {
     "bank_offer_sub_title_multiple": "Pay for your purchases via one of the following bank cards and get the specified discount",
     "bank_offer_sub_title_single": "Pay for your purchases via :bank_name bank card and get discount"
+  },
+  "home": {
+    "social_proof": {
+      "bottom_cta_title": "Try Noor Store Now!",
+      "bottom_cta_subtitle": "Join thousands of satisfied customers and enjoy an exceptional shopping experience",
+      "shop_now": "Shop Now",
+      "about_us": "About Us",
+      "fallback_title": "Noor Store Features",
+      "fallback_subtitle": "Free shipping on orders over 200 SAR • Free returns within 14 days • 24/7 support"
+    }
   }
+
 }
